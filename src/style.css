@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --color-brand: #4f46e5;
+  --color-brand-dark: #4338ca;
+}
+
+@layer components {
+  .modern-input {
+    @apply w-full px-5 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 
+           rounded-2xl outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand 
+           transition-all text-slate-900 dark:text-white placeholder:text-slate-400;
+  }
+
+  .btn-primary {
+    @apply bg-brand hover:bg-brand-dark text-white font-bold py-3 px-6 rounded-xl 
+           transition-all shadow-lg shadow-brand/20 active:scale-95 disabled:opacity-50;
+  }
+
+  /* ... rest of your CSS classes from before ... */
+}
+.split-screen-view { display: flex; min-height: 100vh; }
+.image-side { flex: 1; position: relative; overflow: hidden; }
+.station-image { width: 100%; height: 100%; object-fit: cover; }
+.image-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(66, 168, 71, 0.1), rgba(241, 90, 36, 0.2));
+}
+.image-text { position: absolute; bottom: 3rem; left: 3rem; color: white; z-index: 2; }
+.form-side { flex: 1; background-color: var(--sb-light-bg); display: flex; justify-content: center; align-items: center; padding: 2rem; }
+.form-container { max-width: 450px; width: 100%; }
+h2 { color: var(--sb-orange); }
+.sb-btn-full { width: 100%; margin-top: 1rem; }
+.checkbox-group { display: flex; align-items: center; font-size: 0.9rem; margin-top: 10px; }
+
+.sb-auth-card h3 {
+  color: var(--sb-green);
+  margin-top: 0;
+}
+.flex-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.separator {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  line-height: 0.1em;
+  margin: 2rem 0;
+}
+.separator span {
+  background: #fff;
+  padding: 0 10px;
+}
+.form-input {
+  @apply w-full text-base px-3.5 py-2.5 border border-gray-300 rounded-xl bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors;
+}
